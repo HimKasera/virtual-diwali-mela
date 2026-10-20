@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Diwali Mela — Fixed Controls</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="welcome"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><radialGradient id="lg" cx=".5" cy=".5" r=".65"><stop offset="0" stop-color="#fff2a0"/><stop offset=".5" stop-color="#ffb02e"/><stop offset="1" stop-color="#d4570e"/></radialGradient><linearGradient id="bw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a2a"/><stop offset="1" stop-color="#a8360c"/></linearGradient><linearGradient id="fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a10"/><stop offset=".6" stop-color="#ffd54a"/><stop offset="1" stop-color="#fffbe0"/></linearGradient></defs>
+<symbol id="lan" viewBox="0 0 60 150"><line x1="30" y1="0" x2="30" y2="18" stroke="#f3c15a" stroke-width="2"/><rect x="20" y="18" width="20" height="8" rx="3" fill="#c0701a"/><path d="M14 30Q6 62 14 94H46Q54 62 46 30Z" fill="url(#lg)" stroke="#f3c15a" stroke-width="2"/><path d="M30 30V94M22 30Q18 62 22 94M38 30Q42 62 38 94" stroke="#a8480c" stroke-width="1.2" fill="none" opacity=".6"/><rect x="18" y="94" width="24" height="7" rx="3" fill="#c0701a"/><path d="M22 101V138M30 101V148M38 101V138" stroke="#d8401c" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="strs" viewBox="0 0 420 260"><path d="M0 80Q200 105 415 4" fill="none" stroke="#ffd78a" stroke-width="1.4" opacity=".8"/><path d="M0 28Q150 62 300 2" fill="none" stroke="#ffd78a" stroke-width="1" opacity=".6"/><path class="bl" d="M0 80Q200 105 415 4" stroke-width="9" stroke-dasharray="0 26"/><path class="bl" d="M0 28Q150 62 300 2" stroke-width="6" stroke-dasharray="0 21" style="animation-delay:-1s"/><use href="#lan" x="38" y="66" width="64" height="160"/><use href="#lan" x="132" y="65" width="54" height="135"/><use href="#lan" x="240" y="52" width="34" height="86"/></symbol>
+<symbol id="fw" viewBox="-50 -50 100 100"></symbol><symbol id="mdl" viewBox="-80 -80 160 160"></symbol></svg>
+<div id="sparks"></div>
+<svg class="deco str" style="left:0" viewBox="0 0 420 260"><use href="#strs" width="420" height="260"/></svg><svg class="deco str" style="right:0;transform:scaleX(-1)" viewBox="0 0 420 260"><use href="#strs" width="420" height="260"/></svg>
+<svg class="deco fwv" style="left:19%;top:5%;color:#ffd08a" viewBox="-50 -50 100 100"><use href="#fw" x="-50" y="-50" width="100" height="100"/></svg>
+<svg class="deco fwv" style="left:70%;top:17%;width:min(11vw,140px);color:#c06bff;animation-delay:-1.5s" viewBox="-50 -50 100 100"><use href="#fw" x="-50" y="-50" width="100" height="100"/></svg>
+<svg class="deco fwv" style="left:76%;top:4%;width:min(14vw,170px);color:#6a6cff;animation-delay:-3s" viewBox="-50 -50 100 100"><use href="#fw" x="-50" y="-50" width="100" height="100"/></svg>
+<svg class="deco mdv" style="left:-130px;bottom:-90px" viewBox="-80 -80 160 160"><use href="#mdl" x="-80" y="-80" width="160" height="160"/></svg><svg class="deco mdv" style="right:-130px;bottom:-90px" viewBox="-80 -80 160 160"><use href="#mdl" x="-80" y="-80" width="160" height="160"/></svg>
+<div class="wc"><svg id="diya" width="110" height="110" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="40" r="30" fill="#ffb02e" opacity=".25"/><path class="flk" d="M50 6Q66 28 50 48Q34 28 50 6Z" fill="url(#fl)"/><path d="M14 58Q50 104 86 58Z" fill="url(#bw)" stroke="#ffd070" stroke-width="2"/><ellipse cx="50" cy="58" rx="36" ry="7" fill="#c24a10" stroke="#ffd070" stroke-width="2"/><circle cx="34" cy="72" r="2" fill="#ffd070"/><circle cx="50" cy="78" r="2" fill="#ffd070"/><circle cx="66" cy="72" r="2" fill="#ffd070"/></svg>
+<h1>Diwali Mela</h1><i>Roshni • Masti • Mithai • Patakhe</i><p>Walk the fair at night, ride 10 rides, light virtual firecrackers, browse toys, mithai and diyas, and chat with funny shopkeepers.</p><p class="ctl">WASD / arrows walk • Shift run • drag to look • E interact • Space jump • M map • P photo</p><button id="enter">Enter the Mela 🪔</button></div></div>
+<div id="hud" aria-label="Diwali Mela controls">
+  <div id="logo" class="p"><b>🪔 Diwali Mela</b><small>Roshni · Masti · Mithai</small></div>
+  <div id="zone" class="p">Grand Entrance</div>
+  <div id="chip" class="p" aria-live="polite"></div>
+
+  <div id="tr">
+    <button id="gift" type="button">🎁 Diwali Gift (Optional)</button>
+    <button id="bBag" type="button">🛍 Bag</button>
+    <button id="bHelp" type="button">❔ Help</button>
+    <button id="bSet" type="button">⚙ Settings</button>
+    <button id="bFw" type="button">🎆 Fireworks</button>
+    <button id="bPh" type="button">📸 Photo</button>
+  </div>
+
+  <div id="hint" class="p">WASD / Arrows · Shift run · E interact · Space jump</div>
+  <div id="prompt" class="p" role="status" aria-live="polite"></div>
+
+  <div id="br">
+    <div id="mini" class="p">
+      <canvas id="map" width="300" height="300" aria-label="Mela minimap"></canvas>
+      <button id="mapT" type="button">Map ▾</button>
+    </div>
+    <div id="music" class="p">
+      <div class="r"><strong>🎵 Diwali Music</strong><span style="flex:1"></span><button id="mMute" type="button" aria-label="Mute music">🔊</button><button id="mMin" type="button" aria-label="Minimize music">−</button></div>
+      <div id="ms" aria-live="polite">Ready</div>
+      <div class="r">
+        <button id="mPrev" type="button" aria-label="Previous track">⏮</button>
+        <button id="mPlay" type="button" aria-label="Play music">▶</button>
+        <button id="mNext" type="button" aria-label="Next track">⏭</button>
+        <input id="mVol" type="range" min="0" max="100" value="60" aria-label="Music volume">
+      </div>
+      <div id="prog"><i></i></div>
+    </div>
+    <button id="bMus" type="button">🎵 Music</button>
+    <button id="bSnd" type="button">🔊 Sound</button>
+  </div>
+
+  <div id="rideov" class="p" aria-live="polite">
+    <h2 id="rn">Ride</h2><p id="rt"></p>
+    <div id="rp" class="bar"><i></i></div><p id="rs">Ride running…</p>
+    <button id="endR" type="button">Exit ride</button>
+  </div>
+  <div id="toast" class="p" role="status" aria-live="polite"></div>
+  <div id="panel" class="p" role="dialog" aria-modal="true"></div>
+
+  <div id="joy" aria-label="Movement joystick"><div id="knob"></div></div>
+  <button id="runb" type="button">RUN</button>
+  <button id="jumpb" type="button">JUMP</button>
+  <button id="actb" type="button" aria-label="Interact">E</button>
+  <div id="pbar"><button id="shot" type="button">📸 Capture</button><button id="pex" type="button">Exit Photo</button></div>
+</div>
+<div id="gm" role="dialog" aria-modal="true" aria-labelledby="gh"><div class="card"><h2 id="gh">🎁 Surprise! Your Diwali Gift Is Here! 🪔</h2><div class="tag">✨ Shagun Mode Activated ✨</div>
+<p>Gift dena optional hai, bhai! 😂❤️</p><p>Lekin agar Diwali ki mithai ke saath thoda sa <i>digital shagun</i> bhi bhejna chaho, toh QR code neeche hai. 😜</p><p><b>No pressure, only pyaar… but UPI wale Lakshmi ji ka swagat hai! 💸🤣</b></p><p>Happy Diwali! 🪔✨</p>
+<img src="qr.png" alt="Diwali gift QR code"><p><b>Completely optional hai! Scan karna ya na karna, aapki marzi. 😂❤️</b></p><button id="gx">Maybe Next Diwali 😂</button> <button id="gc" aria-label="Close">✕ Close</button></div></div>
+<div id="foot" class="p" style="padding:3px 10px;border-radius:20px">Developed By — <a href="https://www.instagram.com/him_kasera/" target="_blank" rel="noopener">Himanshu Kasera</a> · <span id="yr"></span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+window.addEventListener('error', e => { document.body.setAttribute('data-js-error', String(e.message || e.error)); });
+</script><script src="script.js"></script><script>
+setTimeout(() => {
+  document.body.setAttribute('data-enter-bound', String(!!document.getElementById('enter').onclick));
+  document.getElementById('enter').click();
+  document.body.setAttribute('data-welcome-display', document.getElementById('welcome').style.display || '(empty)');
+}, 1000);
+</script></body></html>
